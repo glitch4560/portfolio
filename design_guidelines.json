@@ -1,0 +1,121 @@
+{
+  "theme": "LIGHT",
+  "archetype": "Archetype 4 (Swiss & High-Contrast Brutalist)",
+  "vibe": "Bold, structured chaos, technical, raw, asymmetrical.",
+  "typography": {
+    "headings": {
+      "family": "Anton",
+      "import_url": "@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');",
+      "classes": "font-['Anton'] uppercase tracking-normal",
+      "sizes": {
+        "h1": "text-6xl sm:text-8xl md:text-[9vw] leading-[0.9]",
+        "h2": "text-5xl sm:text-6xl lg:text-7xl leading-[1]",
+        "h3": "text-2xl sm:text-3xl lg:text-4xl leading-tight"
+      },
+      "style": "Massive, high-impact, completely dominates the viewport. No letter-spacing tight for Anton as it is already extremely condensed."
+    },
+    "body": {
+      "family": "JetBrains Mono",
+      "import_url": "@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700;800&display=swap');",
+      "classes": "font-['JetBrains_Mono'] leading-relaxed",
+      "sizes": {
+        "base": "text-base sm:text-lg",
+        "small": "text-sm",
+        "labels": "text-xs uppercase tracking-[0.2em]"
+      }
+    }
+  },
+  "colors": {
+    "background": {
+      "primary": "#F4F4F0",
+      "secondary": "#FFFFFF",
+      "classes": "bg-[#F4F4F0] text-[#0A0A0A]"
+    },
+    "text": {
+      "primary": "#0A0A0A",
+      "secondary": "#555555",
+      "inverse": "#F4F4F0"
+    },
+    "accent": {
+      "primary": "#FF3333",
+      "hover": "#CC0000",
+      "classes": "bg-[#FF3333] text-[#F4F4F0]"
+    },
+    "borders": {
+      "primary": "#0A0A0A",
+      "subtle": "rgba(10, 10, 10, 0.15)"
+    }
+  },
+  "layout": {
+    "strategy": "Asymmetric Bento Grids and Border Collapse (The Technical Look). Elements should have hard 1px or 2px solid black borders to expose the skeleton. Avoid center-alignment; rely on sharp left or right alignment.",
+    "spacing": {
+      "section_padding": "py-24 md:py-32 lg:py-40",
+      "container_padding": "px-6 md:px-12 lg:px-16",
+      "gap": "gap-6 md:gap-10"
+    },
+    "components": {
+      "cards": "bg-[#FFFFFF] border-2 border-[#0A0A0A] shadow-[6px_6px_0px_#0A0A0A] transition-all hover:-translate-y-1 hover:translate-x-[-1px] hover:shadow-[10px_10px_0px_#FF3333]",
+      "buttons": "inline-flex items-center justify-center bg-[#FF3333] text-[#FFFFFF] border-2 border-[#0A0A0A] font-['JetBrains_Mono'] font-bold uppercase tracking-wider px-8 py-4 shadow-[4px_4px_0px_#0A0A0A] hover:bg-[#0A0A0A] hover:text-[#FF3333] transition-all cursor-pointer",
+      "tags": "border-2 border-[#0A0A0A] px-3 py-1 text-xs font-bold uppercase tracking-wider font-['JetBrains_Mono'] bg-[#F4F4F0] text-[#0A0A0A]",
+      "nav": "fixed top-0 w-full border-b-2 border-[#0A0A0A] bg-[#F4F4F0]/90 backdrop-blur-md z-50 flex justify-between items-center px-6 py-4"
+    }
+  },
+  "motion": {
+    "libraries_required": ["framer-motion", "react-fast-marquee", "lucide-react"],
+    "rules": [
+      "No soft fades. Use snappy, mechanical transitions (e.g., ease: [0.25, 1, 0.5, 1], duration: 0.4).",
+      "Stagger list items sharply in the grids.",
+      "Use massive scrolling marquees for the skills section to create 'Living Texture'."
+    ]
+  },
+  "sections": {
+    "hero": {
+      "layout": "Grid-based asymmetrical split (e.g., 12 columns: text takes 8, image takes 4, or vice versa).",
+      "visuals": "Break 'CHANDRA KIRAN KOPPARAPU' into multiple giant lines. Next to it, place the brutalist 3D rendered graphic with a hard black border.",
+      "interactions": "Slide up text on load. Image has a harsh hover effect (grayscale to color)."
+    },
+    "about": {
+      "layout": "Two-column asymmetric layout (e.g., md:grid-cols-12). Large heading on the left (col-span-5). Monospaced bio text on the right (col-span-7).",
+      "style": "Raw, honest. Use a solid black border dividing the columns or wrapping the section."
+    },
+    "skills": {
+      "layout": "Kinetic Texture Marquee.",
+      "style": "Massive outline text (e.g., text-transparent bg-clip-text stroke-black style, or just text-6xl text-[#0A0A0A]) scrolling infinitely using react-fast-marquee. Group tags underneath in a tight flex layout."
+    },
+    "projects": {
+      "layout": "Mode A: The Tetris Grid (grid-cols-1 md:grid-cols-12). Make project cards span different column widths (e.g., col-span-12 for the first featured, col-span-6 for the next two, col-span-4 for smaller ones).",
+      "style": "Neobrutalist cards. Hard borders, solid shadows. Tech tags visibly separated inside."
+    },
+    "publications_certifications": {
+      "layout": "Border collapse list.",
+      "style": "Minimalist, technical. Each item is a full-width row with a 2px bottom border border-[#0A0A0A]. On hover, background turns #0A0A0A and text turns #F4F4F0."
+    },
+    "contact": {
+      "layout": "Massive footer typography.",
+      "style": "Text '[12vw]' saying 'LET'S TALK'. Mailto link and social links as oversized brutalist buttons."
+    }
+  },
+  "images": {
+    "hero_background": {
+      "url": "https://static.prod-images.emergentagent.com/jobs/c0ddb4a1-8010-4389-86aa-689d1bfed176/images/8d765f9bcb6cc76f918a6246ea872b3cf60616a528e159a0cf049952d292253b.png",
+      "description": "Abstract brutalist 3D render with red neon lines. Extreme contrast.",
+      "usage": "Use in the hero section as a dominant asymmetrical visual element. Apply object-cover and wrap in a div with border-2 border-[#0A0A0A]."
+    },
+    "texture_overlay": {
+      "url": "https://images.pexels.com/photos/14343553/pexels-photo-14343553.jpeg",
+      "description": "Brutalist concrete geometric texture",
+      "usage": "Use as a background image with very low opacity (e.g., opacity-10 or mix-blend-multiply) behind the projects or contact section to break up flat colors."
+    }
+  },
+  "instructions_to_main_agent": [
+    "Strictly follow the neobrutalist aesthetic: Hard lines (border-2 border-[#0A0A0A]), solid shadows (shadow-[6px_6px_0px_#0A0A0A]), no soft drop shadows.",
+    "Do NOT use Inter, Roboto, or standard sans-serif for headings. Import and use 'Anton' for headings and 'JetBrains Mono' for body text in index.css.",
+    "Ensure all interactive elements have a data-testid attribute for testing (e.g., data-testid='hero-contact-btn').",
+    "Build this as a single-page React app (.jsx or .js). No Typescript as per environment constraints.",
+    "For the hero section heading, break the name CHANDRA KIRAN KOPPARAPU into multiple lines using large typography (e.g., text-6xl to text-[9vw]).",
+    "Integrate 'react-fast-marquee' for a high-energy skills display and install framer-motion, lucide-react.",
+    "Do NOT center everything. Rely on grids and asymmetrical balancing.",
+    "Implement pure HTML+Tailwind for complex overlapping and grid layouts. Use Shadcn only if absolutely necessary for form/logic, but for this portfolio, standard semantic HTML is preferred for maximum design control.",
+    "The layout must be responsive. Use flex-col on mobile, translating to complex grids (grid-cols-12) on md/lg screens."
+  ]
+}
