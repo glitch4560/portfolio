@@ -1,0 +1,231 @@
+.assembly-hero {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  min-height: 100svh;
+  flex-direction: column;
+  overflow: hidden;
+  padding: clamp(6rem, 13vh, 9rem) 0 1.6rem;
+}
+
+.assembly-layout {
+  position: relative;
+  display: grid;
+  flex: 1;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(1.5rem, 3.4vw, 3.7rem);
+  padding-block: 1.8rem 3.8rem;
+}
+
+.assembly-copy { position: relative; min-width: 0; }
+.assembly-meta, .assembly-links { display: flex; flex-wrap: wrap; align-items: center; }
+.assembly-meta { width: fit-content; gap: .4rem 1.35rem; margin-bottom: 1.8rem; }
+.assembly-name {
+  font-size: clamp(3.65rem, 7.45vw, 7rem);
+  line-height: .96;
+  letter-spacing: -.045em;
+}
+.assembly-name span {
+  display: block;
+  width: fit-content;
+  max-width: 100%;
+  padding: .045em .09em .09em 0;
+  margin-bottom: -.11em;
+}
+.assembly-name span + span { font-style: italic; color: #dbd5c6; }
+.assembly-statement {
+  max-width: 44ch;
+  margin-top: 2.2rem;
+  color: #cecfc9;
+  font-size: clamp(1rem, 1.3vw, 1.18rem);
+  font-weight: 300;
+  line-height: 1.58;
+}
+.assembly-links {
+  width: fit-content;
+  max-width: 100%;
+  gap: .7rem 1.35rem;
+  margin-top: 1.8rem;
+}
+.assembly-links a, .assembly-footer a, .intro-control, .unit-name {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: .63rem;
+  font-weight: 500;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+.assembly-links a { display: inline-flex; align-items: center; gap: .55rem; padding: .4rem 0; }
+.assembly-socials { display: inline-flex; column-gap: inherit; }
+.assembly-links a:hover, .assembly-footer a:hover { color: var(--accent); }
+.assembly-links .work-link { border-bottom: 1px solid #9e8654; }
+.assembly-links .work-link svg { color: var(--accent); }
+.assembly-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.3rem;
+  border-top: 1px solid var(--line-strong);
+  padding-top: 1.15rem;
+  color: #a09f99;
+}
+.assembly-footer p, .unit-status {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: .66rem;
+}
+.assembly-footer a, .intro-control { display: inline-flex; align-items: center; gap: .55rem; }
+
+/* An open drafting surface. The registration marks stay put as the rover enters. */
+.robot-dock { position: relative; min-width: 0; margin: 0; }
+.robot-stage {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 1.19;
+  background: radial-gradient(ellipse at 56% 62%, #343028a6, #1e1d196e 45%, transparent 73%);
+}
+.robot-stage::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, #ccc2a657 .75px, transparent 1px);
+  background-size: 16px 16px;
+  mask-image: radial-gradient(ellipse, #0009 20%, #0005 57%, transparent 85%);
+}
+.dock-corners {
+  --tick: #a3a09682;
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(var(--tick),var(--tick)) left top / 13px 1px,
+    linear-gradient(var(--tick),var(--tick)) left top / 1px 13px,
+    linear-gradient(var(--tick),var(--tick)) right top / 13px 1px,
+    linear-gradient(var(--tick),var(--tick)) right top / 1px 13px,
+    linear-gradient(var(--tick),var(--tick)) left bottom / 13px 1px,
+    linear-gradient(var(--tick),var(--tick)) left bottom / 1px 13px,
+    linear-gradient(var(--tick),var(--tick)) right bottom / 13px 1px,
+    linear-gradient(var(--tick),var(--tick)) right bottom / 1px 13px;
+  background-repeat: no-repeat;
+}
+.dock-corners::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 34%;
+  height: 32%;
+  width: 5px;
+  background: repeating-linear-gradient(to bottom, #c7c2b453 0 1px, transparent 1px 9px);
+}
+.robot-drawing { position: absolute; inset: 3% 0 2%; }
+.robot-carriage, .workbench, .robot-drawing .builder-robot { position: absolute; inset: 0; height: 100%; width: 100%; }
+.builder-robot { display: block; }
+.robot-head { transform-origin: 246px 186px; }
+.robot-shoulder { transform-origin: 190px 210px; }
+.robot-forearm { transform-origin: 153px 220px; }
+.robot-pen { transform: rotate(var(--pen-angle, -48deg)); transition: transform .28s ease-out; }
+.robot-eyes { transform-box: fill-box; transform-origin: center; }
+.robot-caption {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: .4rem;
+  min-height: 3rem;
+  border-bottom: 1px solid var(--line);
+}
+.robot-status { display: flex; align-items: center; gap: .65rem; }
+.status-led { width: 5px; height: 5px; border-radius: 50%; background: var(--accent); }
+.unit-name { color: #e5dfcf; }
+.unit-status { color: #a3a19a; font-size: .62rem; }
+.intro-control {
+  flex-shrink: 0;
+  min-height: 44px;
+  color: #c2bfb7;
+  letter-spacing: .06em;
+  font-size: .6rem;
+}
+.intro-control:hover { color: var(--accent); }
+
+/* The DOM retains its final geometry throughout the sequence. */
+.is-building [data-build] { clip-path: inset(-4px var(--cut, 100%) -4px -1px); }
+.is-building [data-build]:not([data-placed]) { opacity: 0; }
+.is-building [data-build="links"]:not([data-placed]),
+.is-building [data-build="footer"]:not([data-placed]) { pointer-events: none; }
+.plotter-beam { position: absolute; z-index: 1; inset: 0; height: 100%; width: 100%; pointer-events: none; opacity: 0; }
+.robot-greeting {
+  position: absolute;
+  inset: 16% 0 auto;
+  z-index: 1;
+  animation: greet-visitor .65s .45s both;
+  pointer-events: none;
+}
+.robot-greeting p:first-child { font-size: clamp(4rem, 7.8vw, 7.4rem); line-height: 1; letter-spacing: -.045em; }
+.robot-greeting p + p { max-width: 32ch; margin-top: 1rem; color: #c7c5bc; font-size: clamp(1rem, 1.55vw, 1.3rem); font-weight: 300; }
+[data-pose="working"] .robot-greeting { animation: greeting-leaves .26s both; }
+.is-building .robot-carriage { animation: rover-arrives 1.25s cubic-bezier(.16,.83,.22,1) both; }
+.is-building .robot-tread { animation: rolling-tread 1.23s cubic-bezier(.16,.83,.22,1) both; }
+[data-pose="greeting"] .robot-forearm { animation: tool-wave 2.17s both; }
+[data-pose="greeting"] .robot-shoulder { animation: lift-arm 2.17s both; }
+[data-pose="greeting"] .robot-head { animation: head-nod 2.17s both; }
+[data-pose="working"] .robot-head { transform: rotate(-6deg); transition: transform .5s ease; }
+[data-pose="working"] .robot-forearm { transform: rotate(var(--tool-aim, -30deg)); transition: transform .28s ease-out; }
+.robot-dock .robot-eyes { animation: optic-blink 6.7s 1.6s infinite; }
+
+@keyframes rover-arrives {
+  from { transform: translate(102%, -9%) rotate(-3deg); }
+  75% { transform: translate(-1.2%, .5%) rotate(1deg); }
+  to { transform: none; }
+}
+@keyframes rolling-tread { from { stroke-dashoffset: -108; } to { stroke-dashoffset: 0; } }
+@keyframes greet-visitor { from { opacity: 0; transform: translateY(9px); } to { opacity: 1; transform: none; } }
+@keyframes greeting-leaves { to { opacity: 0; transform: translateY(-9px); } }
+@keyframes lift-arm { 24%, 79% { transform: rotate(25deg); } }
+@keyframes tool-wave {
+  0%,100% { transform: rotate(0); }
+  23%,53%,79% { transform: rotate(36deg); }
+  37%,66% { transform: rotate(9deg); }
+}
+@keyframes head-nod { 24%,73% { transform: rotate(-6deg) translateY(1px); } 46% { transform: rotate(-2deg) translateY(2px); } }
+@keyframes optic-blink { 0%, 3%, 100% { transform: scaleY(1); } 1.5% { transform: scaleY(.12); } }
+
+/* The little rover sets the section title and its baseline in one pass. */
+.assembly-heading { --travel: 1.9s cubic-bezier(.35,.05,.3,1); }
+.section-type { display: flow-root; }
+.section-track { position: relative; height: 1px; margin-top: 2rem; }
+.section-rule { height: 100%; background: var(--line-strong); transform-origin: left; }
+[data-heading="waiting"] .section-type, [data-heading="waiting"] .section-rule { opacity: 0; }
+[data-heading="drawing"] .section-type { animation: print-title var(--travel) both; }
+[data-heading="drawing"] .section-rule { animation: print-rule var(--travel) both; }
+.section-builder {
+  position: absolute;
+  width: clamp(3rem, 6vw, 4.7rem);
+  bottom: 0;
+  animation: traverse-section var(--travel) both;
+  pointer-events: none;
+}
+.section-builder .builder-robot { width: 100%; transform: scaleX(-1); }
+.section-builder i { position: absolute; right: 10%; bottom: 0; width: 1px; height: 47%; background: linear-gradient(#edcb80, #e5b65c33); transform-origin: bottom; transform: rotate(-7deg); }
+@keyframes print-title { from { clip-path: inset(-3px 100% -6px 0); } to { clip-path: inset(-3px 0 -6px 0); } }
+@keyframes print-rule { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+@keyframes traverse-section {
+  0% { left: 0; opacity: 0; transform: translateX(-55%); }
+  8%, 89% { opacity: 1; }
+  100% { left: 100%; opacity: 0; transform: translateX(-100%); }
+}
+
+@media (max-width: 760px) {
+  .assembly-hero { padding-top: 5.25rem; }
+  .assembly-layout { display: flex; flex-direction: column; align-items: stretch; gap: 1.8rem; padding-block: 0 2.25rem; }
+  .robot-dock { order: -1; width: 100%; max-width: 29rem; align-self: center; }
+  .robot-stage { height: clamp(10rem, 27svh, 16rem); aspect-ratio: auto; }
+  .robot-caption { min-height: 2.5rem; }
+  .assembly-name { font-size: clamp(3.4rem, 11.7vw, 5.2rem); }
+  .assembly-meta { margin-bottom: 1.15rem; }
+  .assembly-statement { margin-top: 1.55rem; }
+  .assembly-links { gap: .3rem 1.1rem; margin-top: 1.2rem; }
+  .assembly-footer p { max-width: 34ch; font-size: .6rem; }
+  .robot-greeting { top: 8%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .is-building [data-build], [data-heading] .section-type, [data-heading] .section-rule { opacity: 1; clip-path: none; }
+  .plotter-beam, .robot-greeting, .section-builder { display: none; }
+  .robot-dock .robot-eyes { animation: none; }
+}
