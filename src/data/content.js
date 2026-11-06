@@ -14,8 +14,8 @@ export const profile = {
   location: "Bangalore, India",
   phone: "+91-8073882044",
   email: "chandukopparapu@gmail.com",
-  github: "https://github.com/ChandraKiran",
-  linkedin: "https://www.linkedin.com/in/chandra-kiran-kopparapu",
+  github: "https://github.com/glitch4560",
+  linkedin: "https://www.linkedin.com/in/chandra-kiran-kopparapu-98b5822a4/",
   available: "Open to 2026 roles",
 
   // One-line positioning statement, set under the hero name.
