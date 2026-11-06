@@ -1,0 +1,7 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "create-react-app",
+  "installCommand": "npm ci --legacy-peer-deps --no-audit --no-fund",
+  "buildCommand": "PUBLIC_URL=/ npm run build",
+  "outputDirectory": "build"
+}
